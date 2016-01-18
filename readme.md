@@ -1,6 +1,6 @@
 # Cards: A package for building card games. 
 
-A standard 52-card deck is provided by default, but can be customize in anyway.
+A standard 52-card deck is provided by default, but you can customize to build any deck you need. Build Bridge, BlackJack, Pocker and more...
 
 ## Installation
 
