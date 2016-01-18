@@ -1,0 +1,26 @@
+{
+    "name": "fust/cards",
+    "description": "A deck of standard cards to build any card game",
+	"keywords": ["cards","deck of cards", "52-cards deck", "bridge", "blackjack", "pocker"],
+    "require-dev": {
+        "mockery/mockery": "dev-master",
+		"phpunit/phpunit": "~4.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aner",
+            "email": "anerfust@myway.com"
+        }
+    ],
+    "require": {
+    	"php": ">=5.5.0"
+	},
+
+	"autoload": {
+	  	"psr-4": {
+				  "Fust\\Cards\\": "src/"
+			  }
+  },
+    "minimum-stability": "dev"
+}
