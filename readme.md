@@ -1,4 +1,4 @@
-# Cards is a package of cards. Makes building card games a breeze. 
+# Cards: A package for building card games. 
 
 A standard 52-card deck is provided by default, but can be customize in anyway.
 
