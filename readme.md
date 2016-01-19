@@ -26,12 +26,12 @@ $hand2 = $d->drawHand(10);
 //draw a single card
 $card = deck->draw();
 
-//how many cards left
+//cards left in the deck
 $deck->count(); 
 
 ``` 
 
-When the game is over, you'll need to reset the deck. Simply shuffle again. The deck now has all the cards (including drawn).
+When the game is over, simply reset the deck by shuffle(ing) again. Now the deck has all the cards (including drawn).
 ```php  
 //start a new game...
 $deck->shuffle();
@@ -39,7 +39,7 @@ $deck->shuffle();
 ``` 
 
 
-To customise a deck of cards, implement a CardProvider
+To customise the cards of a deck, implement your own CardProvider
 
 ```php
 class MyGameDeckProvider implements CardProvider{
@@ -49,7 +49,8 @@ class MyGameDeckProvider implements CardProvider{
         //return an array of card for MyGame 
 	}
 }
-
+//...
+$deck = new Deck(new MyGameDeckProvider);
 ```
 You may also want to look at:
 
@@ -57,7 +58,7 @@ You may also want to look at:
 - `CardProvider` for providig cards to the deck
 
 
-**The current implementation doen't let adding  cards back to deck after drawing them.**
+**The current implementation doen't let putting cards back into the deck after drawing them. Shuffle resets the deck**
 
 
 
