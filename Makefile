@@ -4,3 +4,5 @@ test:
 	./vendor/bin/phpunit
 card:
 	./vendor/bin/phpunit ./tests/CardTest
+deck:
+	./vendor/bin/phpunit ./tests/DeckTest

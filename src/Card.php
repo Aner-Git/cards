@@ -47,7 +47,7 @@ class Card{
 	}
 	
 
-	private function isValidFaceValue($value){
+	protected function isValidFaceValue($value){
 
 			if($value >= 2 && $value <= 10){
 					return true;
@@ -60,7 +60,7 @@ class Card{
 			return false;
 	}
 
-	private function isFaceCardOrAce($value){
+	protected function isFaceCardOrAce($value){
 
 		return (
 				$value == static::ACE 
