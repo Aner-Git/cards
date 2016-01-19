@@ -39,7 +39,7 @@ $deck->shuffle();
 ``` 
 
 
-To create a deck for say a game that has more/less cards, implement a CardProviver
+To customise a deck of cards, implement a CardProvider
 
 ```php
 class MyGameDeckProvider implements CardProvider{
