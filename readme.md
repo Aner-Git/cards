@@ -19,19 +19,21 @@ $d = new Deck;
 
 $d->shuffle();
 
+//deal...
 $hand1 = $d->drawHand(10);
 $hand2 = $d->drawHand(10);
 
-//to draw a single card
+//draw a single card
 $card = deck->draw();
 
+//how many cards left
 $deck->count(); 
 
 ``` 
 
 When the game is over, you'll need to reset the deck. Simply shuffle again. The deck now has all the cards (including drawn).
 ```php  
-New game...
+//start a new game...
 $deck->shuffle();
 
 ``` 
