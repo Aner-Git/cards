@@ -34,7 +34,7 @@ class DeckTest extends PHPUnit_Framework_TestCase {
 	/**
      * @expectedException UnderflowException 
      */
-    public function testConstructException()
+    public function testDeckHadNoCardsException()
     {
 
 		$deck = new Deck(new EmptyCardProvider);
