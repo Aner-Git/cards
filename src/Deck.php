@@ -33,14 +33,14 @@ class Deck{
 		 * @param CardProvider $provider provider the initial cards for the deck
 		 */
 		public function __construct(CardProvider $provider = null ){
-		
-			if(is_null($provider)){
-				$provider = new StandardDeckProvider;	
-			}
 
-			$this->cards = $provider->getCards();
+				if(is_null($provider)){
+						$provider = new StandardDeckProvider;	
+				}
+
+				$this->cards = $provider->getCards();
 		}
-		
+
 		/**
 		 * Draw a card from the deck
 		 *
@@ -50,14 +50,14 @@ class Deck{
 		 */	
 		public function draw(){
 
-			if($this->count() == 0){
-				throw new \UnderflowException('No more cards in the deck!');	
-			}
+				if($this->count() == 0){
+						throw new \UnderflowException('No more cards in the deck!');	
+				}
 
-			$card = array_pop($this->cards);	
-			$this->cardsDrawn[] = $card;
+				$card = array_pop($this->cards);	
+				$this->cardsDrawn[] = $card;
 
-			return $card; 
+				return $card; 
 		}
 
 		/**
@@ -70,22 +70,22 @@ class Deck{
 		 */	
 		public function drawHand($size = 1){
 
-			$hand = [];
+				$hand = [];
 
-			for($i=0; $i<$size; ++$i){
-				$hand[] = $this->draw();	
-			}
+				for($i=0; $i<$size; ++$i){
+						$hand[] = $this->draw();	
+				}
 
-			return $hand; 
+				return $hand; 
 		}
-		
+
 		/**
 		 * Get the cards in the deck
 		 *
 		 * @return array array of Cards
 		 */
 		public function getCards(){
-			return $this->cards;	
+				return $this->cards;	
 		}
 
 		/**
@@ -95,7 +95,7 @@ class Deck{
 		 */
 
 		public function getDrawnCards(){
-			return $this->cardsDrawn;	
+				return $this->cardsDrawn;	
 		}
 
 		/**
@@ -104,7 +104,7 @@ class Deck{
 		 * @return integer
 		 */
 		public function count(){
-			return count($this->cards);	
+				return count($this->cards);	
 		}
 
 		/**
@@ -113,7 +113,7 @@ class Deck{
 		 * @return integer
 		 */
 		public function countDrawn(){
-			return count($this->cardsDrawn);	
+				return count($this->cardsDrawn);	
 		}
 
 		/**
@@ -122,9 +122,9 @@ class Deck{
 		 * @return bool shuffle was successful
 		 */
 		public function shuffle(){
-		
+
 				if(is_null($this->shuffler)){
-					$this->setShuffler(new StandardShuffle);
+						$this->setShuffler(new StandardShuffle);
 				}
 
 				$this->reset();
@@ -136,14 +136,14 @@ class Deck{
 		 * Set a new Shuffle algorithm 
 		 */
 		public function setShuffler(Shuffleable $s){
-			$this->shuffler = $s;	
+				$this->shuffler = $s;	
 		}
-		
+
 		protected function reset(){
 
 				while(count($this->cardsDrawn)){
-					$c = array_pop($this->cardsDrawn);	
-					array_push($this->cards, $c);	
+						$c = array_pop($this->cardsDrawn);	
+						array_push($this->cards, $c);	
 				}
 		}
 }
