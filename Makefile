@@ -1,8 +1,10 @@
 #Make makes things easier
 
+UNIT=./vendor/bin/phpunit
+
 test:
-	./vendor/bin/phpunit
+	$(UNIT)	
 card:
-	./vendor/bin/phpunit ./tests/CardTest
+	$(UNIT) ./tests/CardTest
 deck:
-	./vendor/bin/phpunit ./tests/DeckTest
+	$(UNIT) ./tests/DeckTest
