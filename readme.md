@@ -38,7 +38,7 @@ $deck->count();
 
 ``` 
 
-When the game is over, simply reset the deck by shuffle(ing) again. Now the deck has all the cards (including drawn).
+When the game is over, simply reset the deck by shuffle(ing). The deck now has all the cards (including drawn).
 ```php  
 //start a new game...
 $deck->shuffle();
@@ -46,7 +46,7 @@ $deck->shuffle();
 ``` 
 
 
-To customise the cards of a deck, implement your own CardProvider
+To customise the deck of cards (i.e. which cards are part of the deck) one can implement the CardProvider interface
 
 ```php
 class MyGameDeckProvider implements CardProvider{
