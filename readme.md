@@ -19,12 +19,19 @@ $d = new Deck;
 
 $d->shuffle();
 
-//deal...
+//deal... an array of cards
 $hand1 = $d->drawHand(10);
 $hand2 = $d->drawHand(10);
 
 //draw a single card
 $card = deck->draw();
+
+//do something with card
+$value = $card->value();
+$suit = $card->suit();
+
+//special card?
+if($card->isFaceCard()){...}
 
 //cards left in the deck
 $deck->count(); 
