@@ -6,7 +6,7 @@ A standard 52-card deck is provided by default, but one can customize to build a
 
 Pull in the package through Composer.
 
-Run `composer require fust/cards`
+Run `composer require noeldavies/cards`
 
 
 ## Usage
