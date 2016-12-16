@@ -2,8 +2,8 @@
 
 namespace NoelDavies\Cards;
 
-use Fust\Cards\Contracts\CardProvider;
-use Fust\Cards\Contracts\Shuffleable;
+use NoelDavies\Cards\Contracts\CardProvider;
+use NoelDavies\Cards\Contracts\Shuffleable;
 
 /**
  * A deck of cards
