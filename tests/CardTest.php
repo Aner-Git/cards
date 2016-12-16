@@ -10,13 +10,13 @@ class CardsTest extends PHPUnit_Framework_TestCase {
 	{
 	}
 
-	
+
 	/**
      * @expectedException InvalidArgumentException
      */
     public function testConstructException()
     {
-		$card = new Card(123, Suit::club());       
+		$card = new Card(123, Suit::club());
     }
 
 	public function testCardSuit()
@@ -25,16 +25,16 @@ class CardsTest extends PHPUnit_Framework_TestCase {
 
 		$card = new Card(Card::ACE, $suit);
 
-		$this->assertEquals($card->suit()->value(), $suit->value()); 
-		$this->assertEquals($card->suit()->name(), $suit->name()); 
-		$this->assertEquals($card->suitName(), $suit->name()); 
+		$this->assertEquals($card->suit()->value(), $suit->value());
+		$this->assertEquals($card->suit()->name(), $suit->name());
+		$this->assertEquals($card->suitName(), $suit->name());
 	}
 
 	public function testAceCard()
 	{
 		$card = new Card(Card::ACE, Suit::diamond());
 		$this->assertTrue($card->isAce());
-		$this->assertEquals(Card::ACE, $card->value()); 
+		$this->assertEquals(Card::ACE, $card->value());
 
 		//negate the test too
 		$card = new Card(2, Suit::diamond());
