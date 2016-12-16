@@ -1,6 +1,6 @@
 <?php
 
-use Fust\Cards\StandardDeckProvider;
+use NoelDavies\Cards\StandardDeckProvider;
 
 class StandardDeckProviderTest extends PHPUnit_Framework_TestCase {
 
@@ -8,7 +8,7 @@ class StandardDeckProviderTest extends PHPUnit_Framework_TestCase {
 	{
 	}
 
-	
+
 	public function testCardCount()
 	{
 		$provider = new StandardDeckProvider;
@@ -30,9 +30,9 @@ class StandardDeckProviderTest extends PHPUnit_Framework_TestCase {
 		$suit['spade'] = 0;
 
 		foreach($cards as $c){
-			++$suit[$c->suitName()];	
+			++$suit[$c->suitName()];
 		}
-		
+
 		$this->assertEquals(13, $suit['club']);
 		$this->assertEquals(13, $suit['diamond']);
 		$this->assertEquals(13, $suit['heart']);

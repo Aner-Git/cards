@@ -1,6 +1,6 @@
 <?php
 
-namespace Fust\Cards;
+namespace NoelDavies\Cards;
 
 /**
  * A card

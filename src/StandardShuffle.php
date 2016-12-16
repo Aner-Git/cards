@@ -1,8 +1,8 @@
 <?php
 
-namespace Fust\Cards;
+namespace NoelDavies\Cards;
 
-use Fust\Cards\Contracts\Shuffleable;
+use NoelDavies\Cards\Contracts\Shuffleable;
 
 /**
  * Shuffles an array of cards using php shuffle

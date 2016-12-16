@@ -1,8 +1,8 @@
 <?php
 
-namespace Fust\Cards;
+namespace NoelDavies\Cards;
 
-use Fust\Cards\Contracts\CardProvider;
+use NoelDavies\Cards\Contracts\CardProvider;
 
 /**
  * The standards cards in a 52 card deck

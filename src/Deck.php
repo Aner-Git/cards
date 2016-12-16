@@ -1,6 +1,6 @@
 <?php
 
-namespace Fust\Cards;
+namespace NoelDavies\Cards;
 
 use Fust\Cards\Contracts\CardProvider;
 use Fust\Cards\Contracts\Shuffleable;

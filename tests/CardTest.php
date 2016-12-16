@@ -1,8 +1,7 @@
 <?php
-use Fust\Cards;
-
-use Fust\Cards\Card;
-use Fust\Cards\Suit;
+use NoelDavies\Cards;
+use NoelDavies\Cards\Card;
+use NoelDavies\Cards\Suit;
 
 class CardsTest extends PHPUnit_Framework_TestCase {
 

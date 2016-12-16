@@ -1,8 +1,8 @@
 <?php
 
 use Mockery as m;
-use Fust\Cards\Deck;
-use Fust\Cards\Contracts\CardProvider;
+use NoelDavies\Cards\Deck;
+use NoelDavies\Cards\Contracts\CardProvider;
 
 class DeckTest extends PHPUnit_Framework_TestCase {
 
@@ -13,7 +13,7 @@ class DeckTest extends PHPUnit_Framework_TestCase {
 	protected function tearDown() {
         \Mockery::close();
     }
-	
+
 	public function testDeckCount()
 	{
 		$deck = new Deck;
@@ -32,7 +32,7 @@ class DeckTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-     * @expectedException UnderflowException 
+     * @expectedException UnderflowException
      */
     public function testDeckHadNoCardsException()
     {
