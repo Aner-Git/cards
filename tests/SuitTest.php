@@ -1,13 +1,13 @@
 <?php
 
-use Fust\Cards\Suit;
+use NoelDavies\Cards\Suit;
 
 class SuitTest extends PHPUnit_Framework_TestCase {
 
 	public function setUp()
 	{
 	}
-	
+
 	public function testCreateSuit()
 	{
 		$club= Suit::club();
@@ -31,13 +31,13 @@ class SuitTest extends PHPUnit_Framework_TestCase {
 
 	public function testSharedSuit()
 	{
-		//these should be shared 
+		//these should be shared
 		$spade= Suit::spade();
 		$spade2= Suit::spade();
 
 		$this->assertSame($spade, $spade2);
 
-		//these should not be shared 
+		//these should not be shared
 		$spade= Suit::spade();
 		$spade3= Suit::spade(false);
 

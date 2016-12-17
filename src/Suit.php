@@ -1,130 +1,134 @@
 <?php
 
-namespace Fust\Cards;
+namespace NoelDavies\Cards;
 
 /**
  * A suit of cards
  */
-final class Suit{
+final class Suit
+{
+    const CLUB    = 100;
+    const DIAMOND = 101;
+    const HEART   = 102;
+    const SPADE   = 103;
 
-	const CLUB 		= 100;
-	const DIAMOND 	= 101;
-	const HEART 	= 102;
-	const SPADE 	= 103;
-	
-	/**
-	 * The suits the were instatiated. 
-	 * Since suits are imutable we save some space
-	 */
-	private static $suits = array();
+    /**
+     * The suits the were instatiated.
+     * Since suits are imutable we save some space
+     */
+    private static $suits = array();
 
-	private function __construct($suit){
+    private function __construct($suit)
+    {
+        $this->suit = $suit;
+    }
 
-		$this->suit= $suit;
-		
-	}
-	
-	/**
-	 * Make a Club suit
-	 * 
-	 * @param bool $shareable share an instance of the suit
-	 * @return Suit
-	 */
-	public static function club($shareable = true)	{
+    /**
+     * Make a Club suit
+     *
+     * @param bool $shareable share an instance of the suit
+     *
+     * @return Suit
+     */
+    public static function club($shareable = true)
+    {
+        if (!$shareable) {
+            return new Suit(static::CLUB);
+        }
 
-			if(!$shareable){
-				return new Suit(static::CLUB);
-			}
+        return static::makeSuit(static::CLUB);
+    }
 
-			return static::makeSuit(static::CLUB);
-	}
+    /**
+     * Make a Diamnod suit
+     *
+     * @param bool $shareable share an instance of the suit
+     *
+     * @return Suit
+     */
+    public static function diamond($shareable = true)
+    {
+        if (!$shareable) {
+            return new Suit(static::DIAMOND);
+        }
 
-	/**
-	 * Make a Diamnod suit
-	 * 
-	 * @param bool $shareable share an instance of the suit
-	 * @return Suit
-	 */
-	public static function diamond($shareable = true)	{
+        return static::makeSuit(static::DIAMOND);
+    }
 
-			if(!$shareable){
-				return new Suit(static::DIAMOND);
-			}
+    /**
+     * Make a Heart suit
+     *
+     * @param bool $shareable share an instance of the suit
+     *
+     * @return Suit
+     */
+    public static function heart($shareable = true)
+    {
+        if (!$shareable) {
+            return new Suit(static::HEART);
+        }
 
-			return static::makeSuit(static::DIAMOND);
-	}
+        return static::makeSuit(static::HEART);
+    }
 
-	/**
-	 * Make a Heart suit
-	 * 
-	 * @param bool $shareable share an instance of the suit
-	 * @return Suit
-	 */
-	public static function heart($shareable = true)	{
+    /**
+     * Make a Spade suit
+     *
+     * @param bool $shareable share an instance of the suit
+     *
+     * @return Suit
+     */
+    public static function spade($shareable = true)
+    {
+        if (!$shareable) {
+            return new Suit(static::SPADE);
+        }
 
-			if(!$shareable){
-				return new Suit(static::HEART);
-			}
+        return static::makeSuit(static::SPADE);
+    }
 
-			return static::makeSuit(static::HEART);
-	}
+    private static function makeSuit($suit)
+    {
+        if (array_key_exists($suit, static::$suits)) {
+            //do nothing
+        } else {
+            static::$suits[$suit] = new static($suit);
+        }
 
-	/**
-	 * Make a Spade suit
-	 * 
-	 * @param bool $shareable share an instance of the suit
-	 * @return Suit
-	 */
-	public static function spade($shareable = true)	{
+        return static::$suits[$suit];
+    }
 
-			if(!$shareable){
-				return new Suit(static::SPADE);
-			}
+    /**
+     * Get the suit unique Id
+     *
+     * @return integer
+     */
+    public function value()
+    {
+        return $this->suit;
+    }
 
-			return static::makeSuit(static::SPADE);
-	}
+    /**
+     * Get the suit name
+     *
+     * @return string
+     */
+    public function name()
+    {
+        switch ($this->suit) {
+            case 100:
+                return 'club';
+            case 101:
+                return 'diamond';
+            case 102:
+                return 'heart';
+            case 103:
+                return 'spade';
+        }
+    }
 
-	
-	private static function makeSuit($suit){
-
-		if(array_key_exists($suit, static::$suits)){
-			//do nothing
-		}else{
-
-			static::$suits[$suit] = new static($suit);		
-		}	
-
-		return static::$suits[$suit];
-	}
-
-	/**
-	 * Get the suit unique Id
-	 *
-	 * @return integer
-	 */
-	public function value(){
-
-		return $this->suit;	
-
-	}
-
-	/**
-	 * Get the suit name 
-	 *
-	 * @return string 
-	 */
-	public function name(){
-	
-			switch($this->suit){
-				case 100: return 'club';	
-				case 101: return 'diamond';	
-				case 102: return 'heart';	
-				case 103: return 'spade';	
-			}	
-	}
-
-	public function __toString(){
-
-		return $this->name();
-	}
+    public function __toString()
+    {
+        return $this->name();
+    }
 }

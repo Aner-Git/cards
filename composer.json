@@ -1,5 +1,5 @@
 {
-    "name": "fust/cards",
+    "name": "noeldavies/cards",
     "description": "A deck of standard cards to build any card game",
 	"keywords": ["cards","deck of cards", "52-cards deck", "bridge", "blackjack", "pocker"],
     "require-dev": {
@@ -8,6 +8,10 @@
     },
     "license": "MIT",
     "authors": [
+        {
+            "name": "Daniel Noel-Davies",
+            "email": "daniel@noeldavi.es"
+        },
         {
             "name": "Aner",
             "email": "anerfust@myway.com"
@@ -19,7 +23,7 @@
 
 	"autoload": {
 	  	"psr-4": {
-				  "Fust\\Cards\\": "src/"
+				  "NoelDavies\\Cards\\": "src/"
 			  }
   },
     "minimum-stability": "dev"
