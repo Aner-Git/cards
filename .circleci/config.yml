@@ -26,7 +26,10 @@ jobs:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
-      - run: node -v
+      - run:
+        name: Node version
+        command: |
+          node -v
         
      
 workflows:
