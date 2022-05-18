@@ -9,7 +9,7 @@ jobs:
     steps:
       - checkout
       - run:
-        name: echo
+        name: Echo
         command: |
           echo "A first hello"
       
@@ -21,7 +21,7 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - run:
-        name: echo
+        name: Echo
         command: |
           echo "A more familiar hi"
       
