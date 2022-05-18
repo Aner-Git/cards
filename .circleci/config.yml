@@ -25,5 +25,5 @@ workflows:
     jobs:
       - one
   two:
-    Jobs:
+    jobs:
       - two
