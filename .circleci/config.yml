@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  one:
+  build:
     docker:
       - image: cimg/ruby:3.0.2
         auth:
