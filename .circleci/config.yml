@@ -1,6 +1,6 @@
-version: '2.1'
+version: 2.1
 jobs:
-  build:
+  one:
     docker:
       - image: cimg/ruby:3.0.2
         auth:
@@ -9,4 +9,40 @@ jobs:
     steps:
       - checkout
       - run:
-          command: echo x
+          name: Echo
+          command: |
+            echo "A first hello"
+      
+  two:
+    docker:
+      - image: cimg/ruby:3.0.2
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    steps:
+      - run:
+          name: Echo
+          command: |
+            echo "A more familiar hi"
+      
+  node:
+    docker:
+      - image: cimg/node:18.2
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    steps:
+      - run:
+          name: Node version
+          command: |
+            node -v
+        
+     
+workflows:
+  one:
+    jobs:
+      - one
+  two:
+    jobs:
+      - two
+      - node
