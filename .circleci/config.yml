@@ -21,7 +21,7 @@ jobs:
       
   node:
     docker:
-      - image: cimg/node:latest
+      - image: cimg/node:18.2
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
