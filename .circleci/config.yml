@@ -8,7 +8,10 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run: echo "A first hello"
+      - run:
+        name: echo
+        command: |
+          echo "A first hello"
       
   two:
     docker:
@@ -17,7 +20,10 @@ jobs:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
-      - run: echo "A more familiar hi"
+      - run:
+        name: echo
+        command: |
+          echo "A more familiar hi"
       
   node:
     docker:
