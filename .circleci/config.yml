@@ -11,4 +11,4 @@ jobs:
       - run:
         name: Echo
         command: |
-          echo "A first hello"
+          echo A first hello
