@@ -18,6 +18,16 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - run: echo "A more familiar hi"
+      
+  node:
+    docker:
+      - image: cimg/node:latest
+    steps:
+      - run:
+        name: Running a node container
+        command: |
+          node -v
+        
      
 workflows:
   version: 2
@@ -27,3 +37,6 @@ workflows:
   two:
     jobs:
       - two
+      - node
+        requires:
+          - two
