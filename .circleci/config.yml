@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 jobs:
   one:
     docker:
@@ -30,7 +30,7 @@ jobs:
         
      
 workflows:
-  version: 2.1
+  version: 2
   one:
     jobs:
       - one
