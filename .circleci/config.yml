@@ -39,7 +39,6 @@ jobs:
         
      
 workflows:
-  version: 2
   one:
     jobs:
       - one
