@@ -38,5 +38,5 @@ workflows:
     jobs:
       - two
       - node
-        requires:
-          - two
+          requires:
+            - two
