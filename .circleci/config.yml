@@ -37,4 +37,4 @@ workflows:
   two:
     jobs:
       - two
-      - node:
+      - node
