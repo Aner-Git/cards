@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   one:
     docker:
-      - image: cimg/ruby:3.0.2
+      - image: cimg/base
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Echo
           command: |
-            echo "A first hello"
+            echo << pipeline.git.branch >>
       
   two:
     docker:
