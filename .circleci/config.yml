@@ -39,7 +39,13 @@ jobs:
         
      
 workflows:
+  version: 2
+  
   one:
+    when:
+      condition:
+        or:
+          equal: [master. pipeline.parameters.branch]
     jobs:
       - one
   two:
