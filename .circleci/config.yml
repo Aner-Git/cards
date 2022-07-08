@@ -40,12 +40,11 @@ jobs:
      
 workflows:
   version: 2
-  
   one:
     when:
       condition:
         or:
-          equal: [master. pipeline.parameters.branch]
+          equal: [master, << pipeline.git.branch >> ]
     jobs:
       - one
   two:
