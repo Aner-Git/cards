@@ -43,7 +43,7 @@ workflows:
   one:
     when:
       condition:
-        or:
+        and:
           equal: [master, << pipeline.git.branch >> ]
     jobs:
       - one
