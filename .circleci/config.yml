@@ -44,6 +44,7 @@ workflows:
     when:
       or:
         - equal: [ master, << pipeline.git.branch >> ]
+        - equal: [circleci-project-setup, << pipeline.git.branch >>]
     jobs:
       - one
   two:
