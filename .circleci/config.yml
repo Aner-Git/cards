@@ -42,7 +42,7 @@ workflows:
   version: 2
   one:
     when:
-      and:
+      or:
         - equal: [ master, << pipeline.git.branch >> ]
     jobs:
       - one
