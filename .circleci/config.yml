@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   one:
     docker:
-      - image: cimg/base:latest
+      - image: cimg/base:current
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
