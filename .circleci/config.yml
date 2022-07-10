@@ -38,11 +38,10 @@ jobs:
       - run:
           name: Echo
           command: |
-          BUILD_ARTIFACTS=''
-           if [ << parameters.build_artifacts >> ];then
-            echo "export BUILD_ARTIFACTS=YES" >> $BASH_ENV
-           fi
-            
+            BUILD_ARTIFACTS=''
+            if [ << parameters.build_artifacts >> ];then
+              echo "export BUILD_ARTIFACTS=YES" >> $BASH_ENV
+            fi
       - when:
           condition:
             and:
