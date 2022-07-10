@@ -1,4 +1,15 @@
 version: 2.1
+
+commands:
+  env:
+    description: test env variable passing
+    steps:
+      - run:
+          name: push images
+          command: |
+            echo hillllll!
+           
+
 jobs:
   one:
     docker:
@@ -19,11 +30,21 @@ jobs:
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    parameters:
+      build_artifacts:
+        default: false
+        type: boolean
     steps:
       - run:
           name: Echo
           command: |
             echo "A more familiar hi"
+      - when:
+          condition:
+            and:
+              - eqauls: [ true, <<parameters.build_artifacts >> ]
+          steps:
+            - run: echo hi
       
   node:
     docker:
@@ -44,7 +65,7 @@ workflows:
     when:
       or:
         - equal: [ master, << pipeline.git.branch >> ]
-        - equal: [circleci-project-setup, << pipeline.git.branch >>]
+        - equal: [xcircleci-project-setup, << pipeline.git.branch >>]
     jobs:
       - one
   two:
