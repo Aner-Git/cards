@@ -42,9 +42,9 @@ jobs:
       - when:
           condition:
             and:
-              - eqauls: [ true, <<parameters.build_artifacts >> ]
+              - eqauls: [ true, << parameters.build_artifacts >> ]
           steps:
-            - run: echo hi
+            - run: echo hixxx
       
   node:
     docker:
@@ -68,9 +68,6 @@ workflows:
         - equal: [xcircleci-project-setup, << pipeline.git.branch >>]
     jobs:
       - one
-  two:
+  twowf:
     jobs:
       - two
-      - node:
-          requires:
-            - two
