@@ -42,7 +42,7 @@ jobs:
       - when:
           condition:
             and:
-              - eqauls: [ true, << parameters.build_artifacts >> ]
+              - eqaul: << parameters.build_artifacts >> 
           steps:
             - run: echo hixxx
       
