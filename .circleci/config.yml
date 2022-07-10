@@ -73,4 +73,5 @@ workflows:
       - one
   twowf:
     jobs:
-      - two
+      - two:
+            build_artifacts: true
