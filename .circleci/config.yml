@@ -44,7 +44,7 @@ jobs:
             and:
               - eqaul: << parameters.build_artifacts >> 
           steps:
-            - run: echo hixxx
+            - run: echo hixxx << parameters.build_artifacts >> 
       
   node:
     docker:
