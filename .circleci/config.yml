@@ -1,7 +1,7 @@
 version: 2.1
 
 commands:
-  env:
+  push:
     description: test env variable passing
     steps:
       - run:
@@ -44,7 +44,7 @@ jobs:
             and:
               - << parameters.build_artifacts >> 
           steps:
-            - run: echo hixxx << parameters.build_artifacts >> 
+            - push 
       
   node:
     docker:
