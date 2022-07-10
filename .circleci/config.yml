@@ -7,7 +7,7 @@ commands:
       - run:
           name: push images
           command: |
-            echo hillllll!
+            echo "BUILD=$BUILD_ARTIFACTS"
            
 
 jobs:
@@ -38,7 +38,11 @@ jobs:
       - run:
           name: Echo
           command: |
-            echo "A more familiar hi"
+          BUILD_ARTIFACTS=''
+           if [ << parameters.build_artifacts >> ];then
+            echo "export BUILD_ARTIFACTS=YES" >> $BASH_ENV
+           fi
+            
       - when:
           condition:
             and:
