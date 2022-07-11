@@ -38,6 +38,9 @@ jobs:
       - run:
           name: Echo
           command: |
+
+          echo XXXXXXXXXXXX <<pipeline.number >>
+
             BUILD_ARTIFACTS=''
             if [ << parameters.build_artifacts >> ];then
               echo "export BUILD_ARTIFACTS=YES" >> $BASH_ENV
