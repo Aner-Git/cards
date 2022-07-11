@@ -39,7 +39,7 @@ jobs:
           name: Echo
           command: |
 
-          echo XXXXXXXXXXXX <<pipeline.number >>
+            echo XXXXXXXXXXXX <<pipeline.number >>
 
             BUILD_ARTIFACTS=''
             if [ << parameters.build_artifacts >> ];then
